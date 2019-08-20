@@ -1,0 +1,1 @@
+# Amawing translator
