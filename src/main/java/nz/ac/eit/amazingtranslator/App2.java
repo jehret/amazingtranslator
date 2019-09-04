@@ -36,6 +36,7 @@ public class App2
             System.out.println(nnivre.getMessage());
             System.exit(1);
         }
+
         SupportedLanguage language=null;
         System.out.println( "Please enter the language (french/german)" );
         String languageAsString=scan.nextLine().toUpperCase();
@@ -46,9 +47,14 @@ public class App2
             System.out.println(lnse.getMessage());
             System.exit(1);
         }
-
-        String translated = translator.translate(language, numberToTranslate);
-        System.out.println("The translation is " + translated);
+        try {
+            String translated = translator.translate(language, numberToTranslate);
+            System.out.println("The translation is " + translated);
+        }
+        catch (NumberNotInAValidRangeException nnivre){
+            System.out.println(nnivre.getMessage());
+            System.exit(1);
+        }
         System.out.println( "Hit a key to exit" );
         scan.nextLine();
     }

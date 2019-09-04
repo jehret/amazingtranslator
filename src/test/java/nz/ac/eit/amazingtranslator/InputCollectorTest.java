@@ -35,13 +35,13 @@ public class InputCollectorTest {
     @Test(expected = NumberNotInAValidRangeException.class)
     public void collectNumber_with31_shouldThrowException() throws NumberNotInAValidRangeException,NumberNotAnIntegerException{
         InputCollector inputCollector=new InputCollector();
-        inputCollector.collectNumber("31");
+        inputCollector.collectNumber("33");
     }
 
     @Test(expected = NumberNotInAValidRangeException.class)
     public void collectNumber_with0_shouldThrowException() throws NumberNotInAValidRangeException,NumberNotAnIntegerException{
         InputCollector inputCollector=new InputCollector();
-        inputCollector.collectNumber("0");
+        inputCollector.collectNumber("-2");
     }
 
     @Test(expected = NumberNotAnIntegerException.class)

@@ -82,9 +82,11 @@ public class Translator {
         return germanTranslations;
     }
 
-    public String translate(SupportedLanguage language, int numberToTranslate) {
-        String translated=translations.get(language).get(numberToTranslate);
-        return translated;
+    public String translate(SupportedLanguage language, int numberToTranslate) throws NumberNotInAValidRangeException{
+        if (numberToTranslate < 1 || numberToTranslate>30) {
+            throw new NumberNotInAValidRangeException(numberToTranslate);
+        }
+        return translations.get(language).get(numberToTranslate);
     }
 
 }
