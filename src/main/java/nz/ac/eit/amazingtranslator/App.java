@@ -14,7 +14,7 @@ public class App
 
     private static void intializeTranslations(){
         frenchTranslations.put(1,"Un");
-        germanTranslations.put(1,"hjhj");
+        germanTranslations.put(1,"hjhjj");
     }
 
     public static void main( String[] args )
