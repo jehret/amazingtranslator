@@ -12,7 +12,9 @@ public class TranslatorTest {
     @Before
     public void setup(){
         translator=new Translator();
-        translator.intializeTranslations();
+        TranslationDictionary stubDictionary=new InMemoryTranslationsDictionary();
+        stubDictionary.intializeTranslations();
+        translator.setDictionary(stubDictionary);
     }
 
     @Test
@@ -49,10 +51,4 @@ public class TranslatorTest {
         translator.translate(SupportedLanguage.GERMAN,0);
     }
 
-    @Test
-    public void intializeTranslations_shouldReturn2Languages(){
-        int languagesNb=translator.intializeTranslations();
-        assertEquals("There is not enough languages in the dictonary",2,languagesNb);
-
-    }
 }
