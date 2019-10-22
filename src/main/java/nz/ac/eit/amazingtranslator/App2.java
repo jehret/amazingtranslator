@@ -15,7 +15,9 @@ public class App2
     {
 
         Translator translator=new Translator();
-        translator.intializeTranslations();
+        TranslationDictionary dictionary=new InMemoryTranslationsDictionary();
+        dictionary.intializeTranslations();
+        translator.setDictionary(dictionary);
 
         InputCollector collector=new InputCollector();
 
